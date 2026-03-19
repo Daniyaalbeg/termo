@@ -146,6 +146,12 @@ struct ElectrobunSidebarWebView: NSViewRepresentable {
             guard !hasLoadedInterface, let webView else { return }
             hasLoadedInterface = true
 
+            if let sidebar = Bundle.main.url(forResource: "sidebar", withExtension: "html")
+                ?? Bundle.main.url(forResource: "sidebar", withExtension: "html", subdirectory: "Resources") {
+                webView.loadFileURL(sidebar, allowingReadAccessTo: sidebar.deletingLastPathComponent())
+                return
+            }
+
             if let bundledIndex = Bundle.main.url(forResource: "index", withExtension: "html", subdirectory: "webui")
                 ?? Bundle.main.url(forResource: "index", withExtension: "html", subdirectory: "dist")
                 ?? Bundle.main.url(forResource: "index", withExtension: "html") {
@@ -187,6 +193,14 @@ struct ElectrobunSidebarWebView: NSViewRepresentable {
             }
         }
 
+        func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+            showFailure(error.localizedDescription)
+        }
+
+        func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+            showFailure(error.localizedDescription)
+        }
+
         private func subscribeToBridge() {
             guard let tabManager else { return }
             listenerId = BridgeController.shared.addListener(for: tabManager) { [weak self] payload in
@@ -205,6 +219,27 @@ struct ElectrobunSidebarWebView: NSViewRepresentable {
         private func evaluate(function: String, json: String) {
             guard let webView, let quoted = Self.javaScriptStringLiteral(json) else { return }
             webView.evaluateJavaScript("\(function)(\(quoted));", completionHandler: nil)
+        }
+
+        private func showFailure(_ message: String) {
+            guard let webView, let html = failureHTML(message) else { return }
+            webView.loadHTMLString(html, baseURL: nil)
+        }
+
+        private func failureHTML(_ message: String) -> String? {
+            let escaped = message
+                .replacingOccurrences(of: "&", with: "&amp;")
+                .replacingOccurrences(of: "<", with: "&lt;")
+                .replacingOccurrences(of: ">", with: "&gt;")
+            return """
+            <!doctype html>
+            <html>
+              <body style=\"margin:0;padding:18px;background:#10161d;color:#f6f2e9;font:12px -apple-system, BlinkMacSystemFont, sans-serif;\">
+                <div style=\"opacity:.7;text-transform:uppercase;letter-spacing:.12em;font-size:10px;margin-bottom:10px;\">Termo Webview Error</div>
+                <div>\(escaped)</div>
+              </body>
+            </html>
+            """
         }
 
         private static func javaScriptStringLiteral(_ string: String) -> String? {

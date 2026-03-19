@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C4A13FC9EC9E910658DF556 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = BA8A41D52187A13AE2A51A3A /* Resources */; };
 		228F68392B3C0FBE1EEC3985 /* TabManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A1C12E06DCD6F6671C18A6 /* TabManager.swift */; };
 		24E229ECE864FC26A6DABAF5 /* TerminalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D786EB48449F5829EF468A0D /* TerminalView.swift */; };
 		31A786597A3701F57ED24F3D /* TermoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1723B59E3763150D8FA8A /* TermoApp.swift */; };
@@ -19,12 +20,14 @@
 		A09FEBA28B9A4C086E9FEA8D /* SplitContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB40A32CA0C19CCA0F51150 /* SplitContainerView.swift */; };
 		A8844476876BE40BC9CB1A02 /* BridgeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1870D5C659242C398E3BDF8 /* BridgeModels.swift */; };
 		AC2DE1C6D82C3136FEF65FBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7166A0DB4E0C5FB86BF9BB86 /* AppDelegate.swift */; };
+		B587D2225A22ABC8940D1D28 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 196D78149EE022CD365DF9FD /* dist */; };
 		C66D06451532740CF74DB27E /* GhosttyKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8F033736B9E74C209C090E7 /* GhosttyKit.xcframework */; };
 		F1DEB216228AAF3247C9238C /* BridgeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6F351B17F982C77EED0772 /* BridgeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1347E1B07D6DC83D89DD606F /* Workspace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workspace.swift; sourceTree = "<group>"; };
+		196D78149EE022CD365DF9FD /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dist; path = electrobun/dist; sourceTree = SOURCE_ROOT; };
 		2C6F351B17F982C77EED0772 /* BridgeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeController.swift; sourceTree = "<group>"; };
 		42D115F1462F971A94BF1411 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4C53763209AC2B3BA5442E9B /* ElectrobunShellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrobunShellView.swift; sourceTree = "<group>"; };
@@ -35,6 +38,7 @@
 		90A1C12E06DCD6F6671C18A6 /* TabManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabManager.swift; sourceTree = "<group>"; };
 		AF7BBA67D69360987A66FBF4 /* termo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = termo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87E9346A6259A3576C5364B /* SplitNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitNode.swift; sourceTree = "<group>"; };
+		BA8A41D52187A13AE2A51A3A /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = SOURCE_ROOT; };
 		C8F033736B9E74C209C090E7 /* GhosttyKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GhosttyKit.xcframework; path = ghostty/macos/GhosttyKit.xcframework; sourceTree = "<group>"; };
 		D786EB48449F5829EF468A0D /* TerminalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalView.swift; sourceTree = "<group>"; };
 		F1870D5C659242C398E3BDF8 /* BridgeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeModels.swift; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 		44E51BB09AA868D972602E70 = {
 			isa = PBXGroup;
 			children = (
+				196D78149EE022CD365DF9FD /* dist */,
+				BA8A41D52187A13AE2A51A3A /* Resources */,
 				6FB0E508BB462D5B21323D54 /* Sources */,
 				75DE094DE34A1EA8F915240F /* Frameworks */,
 				D82CF08E73B907FB404690C8 /* Products */,
@@ -106,6 +112,7 @@
 			buildConfigurationList = 1D088F293C0CBD9FE21A91BA /* Build configuration list for PBXNativeTarget "termo" */;
 			buildPhases = (
 				F67824D8982F12294010A77F /* Sources */,
+				150DBD37CB2C2114567027B1 /* Resources */,
 				83D9240B64B2C5E5635EDBBE /* Frameworks */,
 			);
 			buildRules = (
@@ -152,6 +159,18 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		150DBD37CB2C2114567027B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C4A13FC9EC9E910658DF556 /* Resources in Resources */,
+				B587D2225A22ABC8940D1D28 /* dist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F67824D8982F12294010A77F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -191,6 +210,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 				);
+				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -295,6 +315,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 				);
+				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

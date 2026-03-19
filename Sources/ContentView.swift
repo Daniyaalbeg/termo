@@ -453,21 +453,17 @@ struct SplitDropTargetView<Content: View>: View {
 
     var body: some View {
         content()
+            .onDrop(of: [.text], delegate: SplitDropDelegate(
+                tabManager: tabManager,
+                size: .zero,
+                dropEdge: $dropEdge
+            ))
             .overlay(
                 GeometryReader { geo in
                     // Drop zone overlay — only visible when dragging
                     if let edge = dropEdge {
                         dropHighlight(edge: edge, size: geo.size)
                     }
-
-                    // Invisible drop target
-                    Color.clear
-                        .contentShape(Rectangle())
-                        .onDrop(of: [.text], delegate: SplitDropDelegate(
-                            tabManager: tabManager,
-                            size: geo.size,
-                            dropEdge: $dropEdge
-                        ))
                 }
             )
     }
@@ -502,9 +498,20 @@ struct SplitDropDelegate: DropDelegate {
     let size: CGSize
     @Binding var dropEdge: Edge?
 
+    private var effectiveSize: CGSize {
+        if size == .zero,
+           let frame = tabManager.window?.contentView?.bounds.size,
+           frame.width > 0,
+           frame.height > 0 {
+            return frame
+        }
+        return size
+    }
+
     private func edgeForLocation(_ location: CGPoint) -> Edge {
-        let relX = location.x / size.width
-        let relY = location.y / size.height
+        let currentSize = effectiveSize
+        let relX = location.x / max(currentSize.width, 1)
+        let relY = location.y / max(currentSize.height, 1)
         // Check which edge is closest
         let distances: [(Edge, CGFloat)] = [
             (.leading, relX),

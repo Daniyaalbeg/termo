@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>termo sidebar</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #10161d;
+        --panel: rgba(255, 255, 255, 0.04);
+        --panel-strong: rgba(115, 183, 255, 0.16);
+        --text: #f6f2e9;
+        --muted: rgba(246, 242, 233, 0.56);
+        --line: rgba(255, 255, 255, 0.08);
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--text); font: 12px -apple-system, BlinkMacSystemFont, sans-serif; }
+      body { background: radial-gradient(circle at top left, rgba(128, 196, 255, 0.18), transparent 38%), radial-gradient(circle at bottom right, rgba(255, 179, 71, 0.12), transparent 32%), linear-gradient(180deg, #0e1319 0%, #10161d 100%); }
+      #app { display: flex; flex-direction: column; gap: 12px; min-height: 100vh; padding: 16px; }
+      .card { border: 1px solid var(--line); border-radius: 18px; background: rgba(8, 11, 15, 0.68); padding: 14px; }
+      .hero { display: flex; justify-content: space-between; align-items: center; }
+      .eyebrow { margin: 0 0 4px; color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; }
+      h1, h2, p { margin: 0; }
+      h1, h2 { font-size: 17px; }
+      .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+      button { border: 0; border-radius: 12px; background: var(--panel); color: var(--text); padding: 10px 12px; cursor: pointer; font: inherit; }
+      button:hover { background: rgba(255,255,255,0.08); }
+      button:disabled { opacity: 0.4; cursor: default; }
+      .list { display: flex; flex-direction: column; gap: 8px; }
+      .item { width: 100%; text-align: left; padding: 12px; border-radius: 14px; background: var(--panel); }
+      .item.active { background: linear-gradient(135deg, var(--panel-strong), rgba(255,255,255,0.05)); }
+      .meta { color: var(--muted); font-size: 11px; margin-top: 4px; }
+      .status { color: var(--muted); font-size: 11px; }
+      .actions { display: flex; gap: 6px; margin-top: 10px; }
+    </style>
+  </head>
+  <body>
+    <div id="app">Loading termo sidebar...</div>
+    <script>
+      const bridge = () => window.__TERMO_BRIDGE__;
+      const app = document.getElementById("app");
+      function req(method, params) {
+        return bridge().invoke({ id: `${Date.now()}-${Math.random()}`, method, params });
+      }
+      function selectedWorkspace(state) {
+        return state.workspaces.find((w) => w.id === state.selectedWorkspaceId) || state.workspaces[0] || null;
+      }
+      function selectedTab(workspace) {
+        return workspace?.tabs.find((t) => t.id === workspace.selectedTabId) || workspace?.tabs[0] || null;
+      }
+      function shortPath(path) {
+        if (!path) return "~";
+        const home = "/Users/";
+        if (path.startsWith(home)) {
+          const parts = path.split("/").filter(Boolean);
+          return parts.length > 2 ? `~/${parts.slice(2).join("/")}` : "~";
+        }
+        return path;
+      }
+      function makeButton(label, onClick, disabled = false) {
+        const el = document.createElement("button");
+        el.textContent = label;
+        el.disabled = disabled;
+        el.addEventListener("click", onClick);
+        return el;
+      }
+      function render(state, error) {
+        const workspace = selectedWorkspace(state);
+        const tab = selectedTab(workspace);
+        app.innerHTML = "";
+        const hero = document.createElement("section");
+        hero.className = "card hero";
+        hero.innerHTML = `<div><p class="eyebrow">Native web shell</p><h1>termo</h1></div>`;
+        hero.appendChild(makeButton("Toggle rail", () => req("toggleSidebar")));
+        app.appendChild(hero);
+        const actions = document.createElement("section");
+        actions.className = "card grid";
+        actions.append(
+          makeButton("New workspace", () => req("createWorkspace", { directory: workspace?.directory || "/" })),
+          makeButton("New session", () => req("createTab", { workspaceId: workspace?.id })),
+          makeButton("Split right", () => tab && req("splitTab", { tabId: tab.id, direction: "horizontal" }), !tab),
+          makeButton("Split down", () => tab && req("splitTab", { tabId: tab.id, direction: "vertical" }), !tab)
+        );
+        app.appendChild(actions);
+        const workspaces = document.createElement("section");
+        workspaces.className = "card";
+        workspaces.innerHTML = `<p class="eyebrow">Workspaces</p><h2>${state.workspaces.length} projects</h2>`;
+        const wsList = document.createElement("div");
+        wsList.className = "list";
+        state.workspaces.forEach((ws) => {
+          const item = document.createElement("button");
+          item.className = `item ${workspace?.id === ws.id ? "active" : ""}`;
+          item.innerHTML = `<strong>${ws.displayName}</strong><div class="meta">${shortPath(ws.directory)} - ${ws.tabs.length} sessions</div>`;
+          item.addEventListener("click", () => req("selectWorkspace", { workspaceId: ws.id }));
+          wsList.appendChild(item);
+        });
+        workspaces.appendChild(wsList);
+        app.appendChild(workspaces);
+        const sessions = document.createElement("section");
+        sessions.className = "card";
+        sessions.innerHTML = `<p class="eyebrow">Sessions</p><h2>${workspace?.displayName || "No workspace"}</h2>`;
+        const sessionList = document.createElement("div");
+        sessionList.className = "list";
+        (workspace?.tabs || []).forEach((session) => {
+          const item = document.createElement("div");
+          item.className = `item ${tab?.id === session.id ? "active" : ""}`;
+          item.innerHTML = `<strong>${session.title || "Terminal"}</strong><div class="meta">${shortPath(session.currentDirectory || session.initialWorkingDirectory)}</div>`;
+          item.addEventListener("click", () => req("selectTab", { tabId: session.id }));
+          const controls = document.createElement("div");
+          controls.className = "actions";
+          controls.append(
+            makeButton("Split x", (event) => { event.stopPropagation(); req("splitTab", { tabId: session.id, direction: "horizontal" }); }),
+            makeButton("Split y", (event) => { event.stopPropagation(); req("splitTab", { tabId: session.id, direction: "vertical" }); }),
+            makeButton("Close", (event) => { event.stopPropagation(); req("closeTab", { tabId: session.id }); })
+          );
+          item.appendChild(controls);
+          sessionList.appendChild(item);
+        });
+        sessions.appendChild(sessionList);
+        app.appendChild(sessions);
+        const status = document.createElement("section");
+        status.className = "card status";
+        status.textContent = error || (tab ? `Focused: ${tab.title || "Terminal"}` : "Ready");
+        app.appendChild(status);
+      }
+      let currentState = { workspaces: [], selectedWorkspaceId: null };
+      let currentError = null;
+      async function bootstrap() {
+        try {
+          const result = await req("getState");
+          currentState = result.state;
+          currentError = result.ok ? null : result.error || null;
+          render(currentState, currentError);
+        } catch (error) {
+          app.textContent = `Bridge bootstrap failed: ${error}`;
+          return;
+        }
+        bridge().subscribe((payload) => {
+          currentState = payload.state;
+          render(currentState, currentError);
+        });
+      }
+      if (bridge()) bootstrap();
+      else window.addEventListener("load", () => bridge() ? bootstrap() : app.textContent = "Native bridge unavailable");
+    </script>
+  </body>
+</html>
