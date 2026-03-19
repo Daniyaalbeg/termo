@@ -1,0 +1,8 @@
+.DS_Store
+.tooling/
+DerivedData/
+build/
+ghostty/macos/
+
+electrobun/dist/
+electrobun/node_modules/

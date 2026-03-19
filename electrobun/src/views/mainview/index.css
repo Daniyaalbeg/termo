@@ -1,0 +1,290 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "SF Pro Display", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(128, 196, 255, 0.18), transparent 38%),
+    radial-gradient(circle at bottom right, rgba(255, 179, 71, 0.12), transparent 32%),
+    linear-gradient(180deg, #0e1319 0%, #10161d 100%);
+  color: #f6f2e9;
+}
+
+button {
+  font: inherit;
+}
+
+.termo-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 100%;
+  padding: 16px;
+}
+
+.hero,
+.overview-card,
+.panel,
+.status-bar {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(8, 11, 15, 0.68);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(18px);
+}
+
+.hero,
+.status-bar,
+.panel-header,
+.workspace-card,
+.session-card,
+.overview-card,
+.actions-grid {
+  display: flex;
+  align-items: center;
+}
+
+.hero {
+  justify-content: space-between;
+  padding: 18px;
+  border-radius: 20px;
+}
+
+.hero h1,
+.panel-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.eyebrow,
+.metric-label {
+  margin: 0 0 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 10px;
+  color: rgba(246, 242, 233, 0.46);
+}
+
+.ghost-button,
+.action-button,
+.workspace-card,
+.session-card,
+.mini-button,
+.icon-button {
+  border: 0;
+  cursor: pointer;
+  color: inherit;
+}
+
+.ghost-button,
+.action-button,
+.mini-button,
+.icon-button {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.ghost-button {
+  padding: 10px 14px;
+  border-radius: 999px;
+}
+
+.ghost-button.small {
+  padding: 8px 10px;
+  font-size: 12px;
+}
+
+.overview-card {
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  border-radius: 18px;
+}
+
+.overview-card > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.overview-card strong {
+  font-size: 20px;
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.action-button {
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: 16px;
+}
+
+.action-button small {
+  color: rgba(246, 242, 233, 0.45);
+}
+
+.action-button:disabled,
+.mini-button:disabled,
+.ghost-button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.panel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 12px;
+  min-height: 0;
+  flex: 1;
+}
+
+.panel {
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 0;
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.panel-header {
+  justify-content: space-between;
+  padding: 16px 18px 12px;
+}
+
+.panel-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 12px 12px;
+  overflow: auto;
+}
+
+.workspace-card,
+.session-card {
+  width: 100%;
+  justify-content: space-between;
+  gap: 12px;
+  text-align: left;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+  cursor: pointer;
+}
+
+.workspace-card:focus-visible,
+.session-card:focus-visible,
+.ghost-button:focus-visible,
+.action-button:focus-visible,
+.mini-button:focus-visible,
+.icon-button:focus-visible {
+  outline: 2px solid rgba(115, 183, 255, 0.8);
+  outline-offset: 2px;
+}
+
+.workspace-card.selected,
+.session-card.active {
+  background: linear-gradient(135deg, rgba(115, 183, 255, 0.18), rgba(255, 255, 255, 0.05));
+  border: 1px solid rgba(115, 183, 255, 0.2);
+}
+
+.workspace-card strong,
+.session-card strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+
+.workspace-card span,
+.session-card span {
+  color: rgba(246, 242, 233, 0.55);
+  font-size: 11px;
+}
+
+.card-meta,
+.session-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.session-index {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.session-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.mini-button,
+.icon-button {
+  border-radius: 999px;
+  padding: 7px 9px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.icon-button {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+}
+
+.status-bar {
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  font-size: 11px;
+  color: rgba(246, 242, 233, 0.68);
+}
+
+@media (max-width: 900px) {
+  .panel-grid,
+  .actions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Make terminal containers non-selectable but terminal content selectable */
+.terminal-pane canvas {
+  user-select: text;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}

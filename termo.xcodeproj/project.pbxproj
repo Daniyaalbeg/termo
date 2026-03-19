@@ -1,0 +1,404 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		228F68392B3C0FBE1EEC3985 /* TabManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A1C12E06DCD6F6671C18A6 /* TabManager.swift */; };
+		24E229ECE864FC26A6DABAF5 /* TerminalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D786EB48449F5829EF468A0D /* TerminalView.swift */; };
+		31A786597A3701F57ED24F3D /* TermoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1723B59E3763150D8FA8A /* TermoApp.swift */; };
+		37D28DB4FF9D2366A7324053 /* GhosttyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD80E9170E2D1971F015A67 /* GhosttyManager.swift */; };
+		59B9681391FF650F04C644E8 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8025A5BE2385ED1F36373DFC /* Tab.swift */; };
+		609BD29CEF8E6AD45A9DF3B5 /* Workspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1347E1B07D6DC83D89DD606F /* Workspace.swift */; };
+		62E25C4599A2DDF45C15BACB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D115F1462F971A94BF1411 /* ContentView.swift */; };
+		66F7283747E4FBF1CCBE08A9 /* ElectrobunShellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C53763209AC2B3BA5442E9B /* ElectrobunShellView.swift */; };
+		7FB5BB4300EE3770CA692EC1 /* SplitNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87E9346A6259A3576C5364B /* SplitNode.swift */; };
+		A09FEBA28B9A4C086E9FEA8D /* SplitContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB40A32CA0C19CCA0F51150 /* SplitContainerView.swift */; };
+		A8844476876BE40BC9CB1A02 /* BridgeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1870D5C659242C398E3BDF8 /* BridgeModels.swift */; };
+		AC2DE1C6D82C3136FEF65FBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7166A0DB4E0C5FB86BF9BB86 /* AppDelegate.swift */; };
+		C66D06451532740CF74DB27E /* GhosttyKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8F033736B9E74C209C090E7 /* GhosttyKit.xcframework */; };
+		F1DEB216228AAF3247C9238C /* BridgeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6F351B17F982C77EED0772 /* BridgeController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1347E1B07D6DC83D89DD606F /* Workspace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workspace.swift; sourceTree = "<group>"; };
+		2C6F351B17F982C77EED0772 /* BridgeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeController.swift; sourceTree = "<group>"; };
+		42D115F1462F971A94BF1411 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4C53763209AC2B3BA5442E9B /* ElectrobunShellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrobunShellView.swift; sourceTree = "<group>"; };
+		4DB40A32CA0C19CCA0F51150 /* SplitContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitContainerView.swift; sourceTree = "<group>"; };
+		7166A0DB4E0C5FB86BF9BB86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7CD80E9170E2D1971F015A67 /* GhosttyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhosttyManager.swift; sourceTree = "<group>"; };
+		8025A5BE2385ED1F36373DFC /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		90A1C12E06DCD6F6671C18A6 /* TabManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabManager.swift; sourceTree = "<group>"; };
+		AF7BBA67D69360987A66FBF4 /* termo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = termo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B87E9346A6259A3576C5364B /* SplitNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitNode.swift; sourceTree = "<group>"; };
+		C8F033736B9E74C209C090E7 /* GhosttyKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GhosttyKit.xcframework; path = ghostty/macos/GhosttyKit.xcframework; sourceTree = "<group>"; };
+		D786EB48449F5829EF468A0D /* TerminalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalView.swift; sourceTree = "<group>"; };
+		F1870D5C659242C398E3BDF8 /* BridgeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeModels.swift; sourceTree = "<group>"; };
+		F3D1723B59E3763150D8FA8A /* TermoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermoApp.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		83D9240B64B2C5E5635EDBBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C66D06451532740CF74DB27E /* GhosttyKit.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		44E51BB09AA868D972602E70 = {
+			isa = PBXGroup;
+			children = (
+				6FB0E508BB462D5B21323D54 /* Sources */,
+				75DE094DE34A1EA8F915240F /* Frameworks */,
+				D82CF08E73B907FB404690C8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6FB0E508BB462D5B21323D54 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				7166A0DB4E0C5FB86BF9BB86 /* AppDelegate.swift */,
+				2C6F351B17F982C77EED0772 /* BridgeController.swift */,
+				F1870D5C659242C398E3BDF8 /* BridgeModels.swift */,
+				42D115F1462F971A94BF1411 /* ContentView.swift */,
+				4C53763209AC2B3BA5442E9B /* ElectrobunShellView.swift */,
+				7CD80E9170E2D1971F015A67 /* GhosttyManager.swift */,
+				4DB40A32CA0C19CCA0F51150 /* SplitContainerView.swift */,
+				B87E9346A6259A3576C5364B /* SplitNode.swift */,
+				8025A5BE2385ED1F36373DFC /* Tab.swift */,
+				90A1C12E06DCD6F6671C18A6 /* TabManager.swift */,
+				D786EB48449F5829EF468A0D /* TerminalView.swift */,
+				F3D1723B59E3763150D8FA8A /* TermoApp.swift */,
+				1347E1B07D6DC83D89DD606F /* Workspace.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		75DE094DE34A1EA8F915240F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C8F033736B9E74C209C090E7 /* GhosttyKit.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D82CF08E73B907FB404690C8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF7BBA67D69360987A66FBF4 /* termo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F4238737C237B745AE7A1A42 /* termo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D088F293C0CBD9FE21A91BA /* Build configuration list for PBXNativeTarget "termo" */;
+			buildPhases = (
+				F67824D8982F12294010A77F /* Sources */,
+				83D9240B64B2C5E5635EDBBE /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = termo;
+			packageProductDependencies = (
+			);
+			productName = termo;
+			productReference = AF7BBA67D69360987A66FBF4 /* termo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7BC73D6019A2AFDC0B3F2B8F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					F4238737C237B745AE7A1A42 = {
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 9CDC0E9F061FF4702C77AB3E /* Build configuration list for PBXProject "termo" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 44E51BB09AA868D972602E70;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = D82CF08E73B907FB404690C8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F4238737C237B745AE7A1A42 /* termo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F67824D8982F12294010A77F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC2DE1C6D82C3136FEF65FBB /* AppDelegate.swift in Sources */,
+				F1DEB216228AAF3247C9238C /* BridgeController.swift in Sources */,
+				A8844476876BE40BC9CB1A02 /* BridgeModels.swift in Sources */,
+				62E25C4599A2DDF45C15BACB /* ContentView.swift in Sources */,
+				66F7283747E4FBF1CCBE08A9 /* ElectrobunShellView.swift in Sources */,
+				37D28DB4FF9D2366A7324053 /* GhosttyManager.swift in Sources */,
+				A09FEBA28B9A4C086E9FEA8D /* SplitContainerView.swift in Sources */,
+				7FB5BB4300EE3770CA692EC1 /* SplitNode.swift in Sources */,
+				59B9681391FF650F04C644E8 /* Tab.swift in Sources */,
+				228F68392B3C0FBE1EEC3985 /* TabManager.swift in Sources */,
+				24E229ECE864FC26A6DABAF5 /* TerminalView.swift in Sources */,
+				31A786597A3701F57ED24F3D /* TermoApp.swift in Sources */,
+				609BD29CEF8E6AD45A9DF3B5 /* Workspace.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		33748D129CAF5BBE81BA6D8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/ghostty/macos",
+					"\"ghostty/macos\"",
+				);
+				GENERATE_INFOPLIST_FILE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+				);
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-lc++",
+					"-framework",
+					Metal,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					IOSurface,
+					"-framework",
+					UniformTypeIdentifiers,
+					"-framework",
+					Carbon,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.termo.app;
+				PRODUCT_NAME = termo;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7BDB810AA24234A9A2D1E43F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = termo.entitlements;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Resources/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "termo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		AC0F12A179215B9D14D16D7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/ghostty/macos",
+					"\"ghostty/macos\"",
+				);
+				GENERATE_INFOPLIST_FILE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+				);
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-lc++",
+					"-framework",
+					Metal,
+					"-framework",
+					QuartzCore,
+					"-framework",
+					IOSurface,
+					"-framework",
+					UniformTypeIdentifiers,
+					"-framework",
+					Carbon,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.termo.app;
+				PRODUCT_NAME = termo;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B271D0A563080093233668DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = termo.entitlements;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Resources/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "termo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D088F293C0CBD9FE21A91BA /* Build configuration list for PBXNativeTarget "termo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33748D129CAF5BBE81BA6D8F /* Debug */,
+				AC0F12A179215B9D14D16D7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9CDC0E9F061FF4702C77AB3E /* Build configuration list for PBXProject "termo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BDB810AA24234A9A2D1E43F /* Debug */,
+				B271D0A563080093233668DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7BC73D6019A2AFDC0B3F2B8F /* Project object */;
+}
