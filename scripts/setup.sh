@@ -11,6 +11,18 @@ if [ -x "$ROOT/.tooling/zig-aarch64-macos-0.15.2/zig" ]; then
     ZIG_BIN="$ROOT/.tooling/zig-aarch64-macos-0.15.2/zig"
 fi
 
+if [ -z "${TOOLCHAINS:-}" ] && command -v xcodebuild &>/dev/null; then
+    METAL_TOOLCHAIN_ID="$(
+        xcodebuild -showComponent MetalToolchain -json 2>/dev/null \
+            | sed -n 's/.*"toolchainIdentifier" : "\(.*\)".*/\1/p' \
+            | head -n 1
+    )"
+    if [ -n "$METAL_TOOLCHAIN_ID" ]; then
+        export TOOLCHAINS="$METAL_TOOLCHAIN_ID"
+        echo "Using Metal toolchain: $TOOLCHAINS"
+    fi
+fi
+
 # 1. Initialize ghostty submodule
 if [ ! -f ghostty/build.zig ]; then
     echo "Initializing ghostty submodule..."
