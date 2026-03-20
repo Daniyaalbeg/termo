@@ -1,0 +1,11 @@
+{
+  "name": "termo-root",
+  "private": true,
+  "scripts": {
+    "setup": "./scripts/setup.sh",
+    "build": "./scripts/build.sh",
+    "build:web": "npm --prefix electrobun run build",
+    "dev:web": "npm --prefix electrobun run dev",
+    "start": "./scripts/run.sh"
+  }
+}

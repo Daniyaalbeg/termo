@@ -4,11 +4,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "npx tsx src/bun/pty-server.ts & npx vite; kill %1",
+    "dev": "sh -c 'npx tsx src/bun/pty-server.ts & pty=$!; trap \"kill $pty\" EXIT INT TERM; npx vite'",
     "dev:pty": "npx tsx src/bun/pty-server.ts",
     "dev:ui": "npx vite",
     "build": "tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "npm run dev"
   },
   "dependencies": {
     "@types/ws": "^8.18.1",
